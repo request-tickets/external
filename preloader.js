@@ -20,7 +20,7 @@ svgImage.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Emblem
 svgImage.style.cssText = `
     max-width: 100%;
     max-height: 100%;
-    display: none;
+    display: block;
     position: absolute;
     top: 50%;
     left: 50%;
