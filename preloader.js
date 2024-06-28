@@ -18,8 +18,8 @@ const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
 svgImage.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Emblem_Original_Alpha.svg';
 svgImage.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 55%;
+    max-height: 40%;
     display: block;
     position: absolute;
     top: 50%;
