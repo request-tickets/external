@@ -14,10 +14,10 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-const svgImage = document.createElement('img');
-svgImage.id = 'svgImage';
-svgImage.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Emblem_Original_Alpha.svg';
-svgImage.style.cssText = `
+const lottie = document.createElement('div');
+lottie.id = 'svgImage';
+lottie.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Emblem_Original_Alpha.svg';
+lottie.style.cssText = `
     max-width: 35%;
     max-height: 30%;
     display: block;
@@ -26,12 +26,19 @@ svgImage.style.cssText = `
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-svgImage.style.display = 'block';
+lottie.style.display = 'block';
 
 // Append the elements to the body
 document.body.appendChild(overlay);
-document.body.appendChild(svgImage);
+document.body.appendChild(lottie);
 
+lottie.loadAnimation({
+        container: lottieContainer,
+        renderer: 'svg', // ou 'canvas' se preferir
+        loop: true,
+        autoplay: true,
+        path: 'https://jvsc99.github.io/preloaderJSLottie/JVGIsylS3F-3.json',
+    });
 // Function to hide the overlay and display the SVG
 function hideOverlay() {
     overlay.style.display = 'none';
