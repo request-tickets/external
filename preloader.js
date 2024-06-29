@@ -15,8 +15,8 @@ overlay.style.cssText = `
 `;
 
 const lottie = document.createElement('div');
-lottie.id = 'svgImage';
-lottie.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Emblem_Original_Alpha.svg';
+lottie.id = 'lottie';
+lottie.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json';
 lottie.style.cssText = `
     max-width: 35%;
     max-height: 30%;
@@ -37,12 +37,12 @@ lottie.loadAnimation({
         renderer: 'svg', // ou 'canvas' se preferir
         loop: true,
         autoplay: true,
-        path: 'https://jvsc99.github.io/preloaderJSLottie/JVGIsylS3F-3.json',
+        path: 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json',
     });
 // Function to hide the overlay and display the SVG
 function hideOverlay() {
     overlay.style.display = 'none';
-    svgImage.style.display = 'block';
+    lottie.style.display = 'block';
 }
 
 // Add an event listener to hide the overlay when all external JS files are loaded
