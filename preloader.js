@@ -1,4 +1,4 @@
-// Create the overlay and SVG elements
+// Create the overlay element
 const overlay = document.createElement('div');
 overlay.id = 'loader';
 overlay.style.cssText = `
@@ -14,10 +14,10 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-const lottie = document.createElement('div');
-lottie.id = 'lottie';
-lottie.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json';
-lottie.style.cssText = `
+// Create the Lottie container element
+const lottieContainer = document.createElement('div');
+lottieContainer.id = 'lottie';
+lottieContainer.style.cssText = `
     max-width: 35%;
     max-height: 30%;
     display: block;
@@ -26,25 +26,27 @@ lottie.style.cssText = `
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-lottie.style.display = 'block';
 
-// Append the elements to the body
+// Append the elements to the overlay
+overlay.appendChild(lottieContainer);
+
+// Append the overlay to the body
 document.body.appendChild(overlay);
-document.body.appendChild(lottie);
 
+// Load the Lottie animation
 lottie.loadAnimation({
-        container: lottieContainer,
-        renderer: 'svg', // ou 'canvas' se preferir
-        loop: true,
-        autoplay: true,
-        path: 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json',
-    });
-// Function to hide the overlay and display the SVG
-function hideOverlay() {
-    overlay.style.display = 'none';
-    lottie.style.display = 'block';
-}
+    container: lottieContainer,
+    renderer: 'svg', // or 'canvas' if you prefer
+    loop: true,
+    autoplay: true,
+    path: 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json',
+});
 
+// Function to hide the overlay and Lottie animation
+function hideOverlay() {
+   overlay.style.display = 'none';
+    lottieContainer.style.display = 'none';
+}
 // Add an event listener to hide the overlay when all external JS files are loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Replace the following lines with the actual code that loads your external JS files
