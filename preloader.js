@@ -36,7 +36,7 @@ document.body.appendChild(overlay);
 // Load the Lottie animation
 lottie.loadAnimation({
     container: lottieContainer,
-    renderer: 'svg', // or 'canvas' if you prefer
+    renderer: 'canvas', // or 'canvas' if you prefer
     loop: true,
     autoplay: true,
     path: 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/lottie_preloader.json',
