@@ -18,8 +18,8 @@ const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
 svgImage.src = 'https://cdn.jsdelivr.net/gh/request-tickets/external@main/Logo_VectorSVG.svg';
 svgImage.style.cssText = `
-    max-width: 55%;
-    max-height: 40%;
+    max-width: 35%;
+    max-height: 30%;
     display: block;
     position: absolute;
     top: 50%;
